@@ -107,12 +107,12 @@ class Arduino:
         c = ''
         value = ''
         attempts = 0
-        while c != '\n':
+        while c != '\r':
             c = self.port.read(1)
             value += c
             attempts += 1
-            if attempts * self.interCharTimeout > timeout:
-                return None
+#            if attempts * self.interCharTimeout > timeout:
+#                return None
 
         value = value.strip('\r')
 
