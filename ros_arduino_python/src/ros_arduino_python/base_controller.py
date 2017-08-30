@@ -245,7 +245,7 @@ class BaseController:
 
             if now > (self.last_cmd_vel + rospy.Duration(self.timeout)):
 	 	        self.v_des_wheel1 = 0
-                self.v_des_wheel2 = 0
+                        self.v_des_wheel2 = 0
 		        self.v_des_wheel3 = 0
 #                self.v_des_left = 0
 #                self.v_des_right = 0
