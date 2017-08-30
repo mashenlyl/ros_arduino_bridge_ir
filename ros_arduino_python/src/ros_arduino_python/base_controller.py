@@ -160,11 +160,11 @@ class BaseController:
             else:
                 dwheel1= (wheel1_enc - self.enc_wheel1) / self.ticks_per_meter
                 dwheel2 = (wheel2_enc - self.enc_wheel2) / self.ticks_per_meter
-		        dwheel3 = (wheel3_enc - self.enc_wheel3) / self.ticks_per_meter
+		dwheel3 = (wheel3_enc - self.enc_wheel3) / self.ticks_per_meter
 
             self.enc_wheel1 = wheel1_enc
             self.enc_wheel2 = wheel2_enc
-	        self.enc_wheel3 = wheel3_enc
+	    self.enc_wheel3 = wheel3_enc
 
 #	    if self.enc_left == None:
 #                dright = 0
@@ -177,10 +177,10 @@ class BaseController:
 #            self.enc_left = left_enc
 
             df_vx = (2 * dwheel2 - dwheel1 - dwheel3) / 3
-	        df_vy = (dwheel3 - dwheel1) * 0.57735
-	        df_vth = (dwheel1 + dwheel2 + dwheel3) / (3 * wheel_track)
+	    df_vy = (dwheel3 - dwheel1) * 0.57735
+	    df_vth = (dwheel1 + dwheel2 + dwheel3) / (3 * wheel_track)
 
-	        delta_x = (df_vx * cos(self.th) - df_vy * sin(self.th)) * dt;
+	    delta_x = (df_vx * cos(self.th) - df_vy * sin(self.th)) * dt;
             delta_y = (df_vx * sin(self.th) + df_vy * cos(self.th)) * dt;
             delta_th = df_vth * dt;
 
