@@ -111,8 +111,8 @@ class Arduino:
             c = self.port.read(1)
             value += c
             attempts += 1
-#            if attempts * self.interCharTimeout > timeout:
-#                return None
+            if attempts * self.interCharTimeout > timeout:
+                return None
 
         value = value.strip('\r')
 
