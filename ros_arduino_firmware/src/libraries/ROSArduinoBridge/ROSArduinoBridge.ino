@@ -207,8 +207,8 @@ int runCommand() {
   case READ_ENCODERS:
     Serial.print(readEncoder(WHEEL1));
     Serial.print(" ");
-    Serial.println(readEncoder(WHEEL2));
-	Serial.print(" ");
+    Serial.print(readEncoder(WHEEL2));
+    Serial.print(" ");
     Serial.println(readEncoder(WHEEL3));
     break;
    case RESET_ENCODERS:
