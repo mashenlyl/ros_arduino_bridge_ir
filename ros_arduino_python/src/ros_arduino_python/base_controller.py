@@ -153,7 +153,7 @@ class BaseController:
 
             # Calculate odometry
 			# Calculate wheelspeed by encoder
-            if self.wheel1_enc == None:
+            if self.enc_wheel1 == None:
                 dwheel1 = 0
                 dwheel2 = 0
                 dwheel3 = 0
