@@ -107,7 +107,7 @@ class Arduino:
         c = ''
         value = ''
         attempts = 0
-        while c != '\r':
+        while c != '\n':
             c = self.port.read(1)
             value += c
             attempts += 1
