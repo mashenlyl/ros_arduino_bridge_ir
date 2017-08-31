@@ -307,7 +307,11 @@ class BaseController:
             wheel1 = -0.5 * x - 0.86603 * y
             wheel2 = x
             wheel3 = -0.5 * x + 0.86603 * y
-        else:
+        elif x == 0 and y == 0 and th == 0:
+	    wheel1 = 0
+	    wheel2 = 0
+	    wheel3 = 0
+	else:
             # Rotation about a point in space
             wheel1 = -0.5 * x - 0.86603 * y + th * self.wheel_track  * self.gear_reduction
             wheel2 = x + th * self.wheel_track  * self.gear_reduction
