@@ -161,6 +161,24 @@ class BaseController:
                 dwheel1= (wheel1_enc - self.enc_wheel1) / self.ticks_per_meter
                 dwheel2 = (wheel2_enc - self.enc_wheel2) / self.ticks_per_meter
 		dwheel3 = (wheel3_enc - self.enc_wheel3) / self.ticks_per_meter
+            
+            if self.enc_wheel2 == None:
+                dwheel1 = 0
+                dwheel2 = 0
+                dwheel3 = 0
+            else:
+                dwheel1= (wheel1_enc - self.enc_wheel1) / self.ticks_per_meter
+                dwheel2 = (wheel2_enc - self.enc_wheel2) / self.ticks_per_meter
+		dwheel3 = (wheel3_enc - self.enc_wheel3) / self.ticks_per_meter
+
+            if self.enc_wheel3 == None:
+                dwheel1 = 0
+                dwheel2 = 0
+                dwheel3 = 0
+            else:
+                dwheel1= (wheel1_enc - self.enc_wheel1) / self.ticks_per_meter
+                dwheel2 = (wheel2_enc - self.enc_wheel2) / self.ticks_per_meter
+		dwheel3 = (wheel3_enc - self.enc_wheel3) / self.ticks_per_meter
 
             self.enc_wheel1 = wheel1_enc
             self.enc_wheel2 = wheel2_enc
