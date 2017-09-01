@@ -313,9 +313,9 @@ class BaseController:
             wheel2 = x + th * self.wheel_track  * self.gear_reduction
             wheel3 = -0.5 * x + 0.86603 * y + th * self.wheel_track  * self.gear_reduction
 
-        rospy.loginfo("wheel1" + str(wheel1))
-	rospy.loginfo("wheel2" + str(wheel2))
-	rospy.loginfo("wheel3" + str(wheel3))
+        rospy.loginfo("wheel1  " + str(wheel1))
+	rospy.loginfo("wheel2  " + str(wheel2))
+	rospy.loginfo("wheel3  " + str(wheel3))
 
 	self.v_des_wheel1 = int(wheel1 * self.ticks_per_meter / self.arduino.PID_RATE)
         self.v_des_wheel2 = int(wheel2 * self.ticks_per_meter / self.arduino.PID_RATE)
