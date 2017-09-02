@@ -188,6 +188,10 @@ class BaseController:
             self.y += delta_y
             self.th += delta_th
 
+	    self.x *= 9.0
+            self.y *= 9.0
+            self.th *= 9.0
+
 #	     dxy_ave = (dright + dleft) / 2.0
 #            dth = (dright - dleft) / self.wheel_track
 #            vxy = dxy_ave / dt
