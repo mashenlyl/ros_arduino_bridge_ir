@@ -56,7 +56,7 @@ class BaseController:
         self.setup_pid(pid_params)
 
         # How many encoder ticks are there per meter?
-        self.ticks_per_meter = self.encoder_resolution * self.gear_reduction  / (self.wheel_diameter * pi)
+        self.ticks_per_meter = 0.95 * self.encoder_resolution * self.gear_reduction  / (self.wheel_diameter * pi)
 
         # What is the maximum acceleration we will tolerate when changing wheel speeds?
         self.max_accel = self.accel_limit * self.ticks_per_meter / self.rate
@@ -158,9 +158,9 @@ class BaseController:
                 dwheel2 = 0
                 dwheel3 = 0
             else:
-                dwheel1= (wheel1_enc - self.enc_wheel1) / self.ticks_per_meter
-                dwheel2 = (wheel2_enc - self.enc_wheel2) / self.ticks_per_meter
-		dwheel3 = (wheel3_enc - self.enc_wheel3) / self.ticks_per_meter
+                dwheel1= (wheel1_enc - self.enc_wheel1) / self.ticks_per_meter / dt
+                dwheel2 = (wheel2_enc - self.enc_wheel2) / self.ticks_per_meter /dt 
+		dwheel3 = (wheel3_enc - self.enc_wheel3) / self.ticks_per_meter / dt 
 
             self.enc_wheel1 = wheel1_enc
             self.enc_wheel2 = wheel2_enc
@@ -188,9 +188,6 @@ class BaseController:
             self.y += delta_y
             self.th += delta_th
 
-	    self.x *= 9.0
-            self.y *= 9.0
-            self.th *= 9.0
 
 #	     dxy_ave = (dright + dleft) / 2.0
 #            dth = (dright - dleft) / self.wheel_track
