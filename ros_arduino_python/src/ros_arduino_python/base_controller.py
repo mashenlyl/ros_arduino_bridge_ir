@@ -180,14 +180,13 @@ class BaseController:
 	    df_vy = (dwheel3 - dwheel1) * 0.57735
 	    df_vth = (dwheel1 + dwheel2 + dwheel3) / (3 * self.wheel_track)
 
-	    delta_x = (df_vx * cos(self.th) - df_vy * sin(self.th)) * dt;
-            delta_y = (df_vx * sin(self.th) + df_vy * cos(self.th)) * dt;
-            delta_th = df_vth * dt;
+	    delta_x = (df_vx * cos(self.th) - df_vy * sin(self.th)) * dt
+            delta_y = (df_vx * sin(self.th) + df_vy * cos(self.th)) * dt
+            delta_th = df_vth * dt
 
-            self.x += delta_x;
-            self.y += delta_y;
-            self.th += delta_th;
-
+            self.x += delta_x
+            self.y += delta_y
+            self.th += delta_th
 
 #	     dxy_ave = (dright + dleft) / 2.0
 #            dth = (dright - dleft) / self.wheel_track
