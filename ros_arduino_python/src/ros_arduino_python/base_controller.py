@@ -236,7 +236,10 @@ class BaseController:
             odom.pose.pose.position.x = self.x
             odom.pose.pose.position.y = self.y
             odom.pose.pose.position.z = 0
-            odom.pose.pose.orientation = quaternion
+            odom.pose.pose.orientation.x = quaternion[0]
+	    odom.pose.pose.orientation.y = quaternion[1]
+	    odom.pose.pose.orientation.z = quaternion[2]
+	    odom.pose.pose.orientation.w = quaternion[3]
             odom.twist.twist.linear.x = df_vx
             odom.twist.twist.linear.y = df_vy
             odom.twist.twist.angular.z = df_vth
