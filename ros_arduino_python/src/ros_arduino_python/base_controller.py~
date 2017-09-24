@@ -96,12 +96,12 @@ class BaseController:
 	self.KIRp=10                                # obstacle Feedback constant(Speed) 
 	self.KIRd=30                                # obstacle Feedback constant(Distance)
 
-	self.SensorPos[0] = 30.0/180.0*3.14           # sensor position    
-  	self.SensorPos[1] = 90.0/180.0*3.14
-  	self.SensorPos[2] = 150.0/180.0*3.14
-  	self.SensorPos[3] = 210.0/180.0*3.14
-  	self.SensorPos[4] = 270.0/180.0*3.14
-  	self.SensorPos[5] = 330.0/180.0*3.14
+	self.SensorPos[0]=30.0/180.0*3.14           # sensor position    
+  	self.SensorPos[1]=90.0/180.0*3.14
+  	self.SensorPos[2]=150.0/180.0*3.14
+  	self.SensorPos[3]=210.0/180.0*3.14
+  	self.SensorPos[4]=270.0/180.0*3.14
+  	self.SensorPos[5]=330.0/180.0*3.14
 
 
          # Internal data
