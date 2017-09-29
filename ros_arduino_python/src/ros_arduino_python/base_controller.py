@@ -93,8 +93,8 @@ class BaseController:
 	
 	self.IRdistance = [0,0,0,0,0,0]		# distance return value of each sensor
 	self.SensorPos =  (0,0,0,0,0,0)              # angles at which sensors are placed
-	self.KIRp=10                                # obstacle Feedback constant(Speed) 
-	self.KIRd=30                                # obstacle Feedback constant(Distance)
+	self.KIRp=0.005                                # obstacle Feedback constant(Speed) 
+	self.KIRd=0.005                              # obstacle Feedback constant(Distance)
 
 	self.SensorPos[0] = 30.0/180.0*3.14           # sensor position    
   	self.SensorPos[1] = 90.0/180.0*3.14
@@ -322,12 +322,12 @@ class BaseController:
 	x = req.linear.x         # m/s
 	y = req.linear.y
 	
-	self.IRdistance[0] = self.arduino.analog_read(69)
-    	self.IRdistance[1] = self.arduino.analog_read(60)
-    	self.IRdistance[2] = self.arduino.analog_read(61)
-    	self.IRdistance[3] = self.arduino.analog_read(62)
-    	self.IRdistance[4] = self.arduino.analog_read(63)
-    	self.IRdistance[5] = self.arduino.analog_read(64)
+	self.IRdistance[0] = self.arduino.analog_read(62)
+    	self.IRdistance[1] = self.arduino.analog_read(63)
+    	self.IRdistance[2] = self.arduino.analog_read(64)
+    	self.IRdistance[3] = self.arduino.analog_read(69)
+    	self.IRdistance[4] = self.arduino.analog_read(60)
+    	self.IRdistance[5] = self.arduino.analog_read(61)
 
 	IRSetspeedX=0
     	IRSetspeedY=0
